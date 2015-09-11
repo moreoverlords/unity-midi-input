@@ -1,3 +1,11 @@
+Piano Fighting Game
+===================
+
+Elevator pitch: Street Fighter-style fighting game using MIDI keyboard as input.
+
+Forked from this shiny MIDI input plugin, since that's essentially the heart of the project.
+
+
 MidiInput for Unity
 ===================
 
