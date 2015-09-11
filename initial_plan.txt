@@ -1,0 +1,66 @@
+This is a bunch of brainstorming I did a while ago for the essential mechanics for the game.
+Nothing here is set in stone (barring the base concept of piano fighting game, that's kinda the point of this project).
+
+
+
+NAME IDEAS:
+
+Maestro
+Virtuoso
+Crescendo
+Forte
+Fortissimo
+Sonata
+Allegro
+Keyboard Warrior(s)
+
+
+GAME IDEAS:
+piano-controlled fighting game
+  fighting games have too many buttons? PSH NOW THEY DO
+  
+left hand, bass controls movement
+
+right hand, treble does attacks
+
+individual notes/triads/chords are simple attacks, famous melodies are combos
+  individual note: light attack
+  triad: medium attack
+  chord: heavy attack
+
+pitch of notes determines attack position (high/low)?
+  I like this, it makes it difficult to do high->low attack or vice versa, just as it's hard to block that
+  
+off-key attacks do reduced damage
+
+combo input windows are generous, but they must stay on-tempo
+  so no 1-frame links, but have to honour the rhythm of the tune
+  
+is there a set tempo for both players?
+  I don't think so, this is too restrictive, timings are already predictable, shouldn't make it more so
+
+characters are famous composers (Mozart, Beethoven, Tchaikovsky)
+  cute chibi style
+
+stage select determines key
+  combos are transposed
+  notes available in the scale change
+
+IMPLEMENTATION:
+Universal Fighting Engine (UFE)? $65-100 (15% off students)
+
+TODO:
+get a cheap keyboard peripheral, usb-connecting
+get midi inputs into unity (https://github.com/keijiro/unity-midi-input)
+set up basic dummy character in UFE
+create a few basic animations/moves (high punch, low kick, hadoken)
+set up character hitboxes
+get keyboard inputs to trigger attacks
+  may need an input parsing layer, since we don't want one-to-one key->move mappings
+  inputs should be received (lazily packaged into strings based on input/tempo), then validated and parsed into a move
+    then trigger that move
+  hopefully this is possible in UFE, ideally don't want to hack things too hard
+*********************** THIS CONSTITUTES A BASIC WORKING PROTOTYPE, PROOF OF CONCEPT ******************************
+
+MUSIC TO USE FOR MOVES:
+http://listverse.com/2011/04/07/top-10-best-known-classical-melodies/
