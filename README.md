@@ -1,7 +1,7 @@
 This is just the beginning!
 TODO immediately:
  - create a Unity project
- - move the plugin stuff from root to project (leave README and initial_plan)
+ - move the plugin stuff from root to project (follow plugin's instructions further down (leave README and initial_plan))
  - get one of the demo projects to boot up
  - plug in the keyboard and get it to hook into the demo project
 
