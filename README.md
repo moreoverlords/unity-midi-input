@@ -7,7 +7,7 @@ Forked from this shiny MIDI input plugin, since that's essentially the heart of 
 
 
 MidiInput for Unity
-===================
+-------------------
 
 **MidiInput** is a native code plug-in for Unity. It allows Unity to communicate with
 external MIDI controllers.
