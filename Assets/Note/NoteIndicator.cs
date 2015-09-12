@@ -8,6 +8,6 @@ public class NoteIndicator : MonoBehaviour
     void Update ()
     {
         transform.localScale = Vector3.one * (0.1f + MidiInput.GetKey (noteNumber));
-        renderer.material.color = MidiInput.GetKeyDown (noteNumber) ? Color.red : Color.white;
+        GetComponent<Renderer>().material.color = MidiInput.GetKeyDown (noteNumber) ? Color.red : Color.white;
     }
 }
