@@ -1,5 +1,32 @@
-MidiInput for Unity
+This is just the beginning!
+TODO immediately:
+ - create a Unity project
+ - move the plugin stuff from root to project (follow plugin's instructions further down (leave README and initial_plan))
+ - get one of the demo projects to boot up
+ - plug in the keyboard and get it to hook into the demo project
+
+TODO future:
+ - choose a fighting game engine, possibly http://www.ufe3d.com/doku.php
+ - write some input-parsing scripts that turn MIDI inputs into more meaningful moves 
+      - (eg. C5+E5 --> medium punch, C>C# trill --> E.Honda hands)
+ - get our parsed inputs into fighting engine
+ - get some shitty models/animations
+ - make some moves, hook up our inputs to the moves, get the dude to punch!
+
+
+
+
+
+Piano Fighting Game
 ===================
+
+Elevator pitch: Street Fighter-style fighting game using MIDI keyboard as input.
+
+Forked from this shiny MIDI input plugin, since that's essentially the heart of the project.
+
+
+MidiInput for Unity
+-------------------
 
 **MidiInput** is a native code plug-in for Unity. It allows Unity to communicate with
 external MIDI controllers.
