@@ -1,17 +1,18 @@
 This is just the beginning!
-TODO immediately:
+TODO immediately: DONE!
  - create a Unity project
  - move the plugin stuff from root to project (follow plugin's instructions further down (leave README and initial_plan))
  - get one of the demo projects to boot up
  - plug in the keyboard and get it to hook into the demo project
 
 TODO future:
- - choose a fighting game engine, possibly http://www.ufe3d.com/doku.php
- - write some input-parsing scripts that turn MIDI inputs into more meaningful moves 
-      - (eg. C5+E5 --> medium punch, C>C# trill --> E.Honda hands)
- - get our parsed inputs into fighting engine
- - get some shitty models/animations
- - make some moves, hook up our inputs to the moves, get the dude to punch!
+ - write a character controller that takes inputs and executes moves
+      - it exposes methods for directional inputs and six buttons
+      - maintains a queue of inputs, parses them into moves/movement
+      - from there, animations and hitboxes and whatnot
+      - use PlayMaker FSM?
+ - write some input-parsing scripts that turn MIDI inputs into CC moves 
+ - figure out how physics/movement should work (thinking not physics, absolute jump arcs/discrete movements)
 
 
 
