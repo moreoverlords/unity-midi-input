@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Note {
 
@@ -11,6 +12,6 @@ public class Note {
 	/// <summary>
 	/// Frame in which the note was hit (since start of round).
 	/// </summary>
-	public long FrameTimestamp;
+	public DateTime TimeStamp;
 
 }
