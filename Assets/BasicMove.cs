@@ -7,26 +7,34 @@ public class BasicMove {
 	public BasicMoveType MoveType;
 	public double HarmonyValue; // 0-1
 	public DateTime Timestamp;
+	public InversionType Inversion;
 
-	public BasicMove(int timestamp, int rootValue, double harmonyValue, BasicMoveType moveType) {
+	public BasicMove(DateTime timestamp, int rootValue, double harmonyValue, BasicMoveType moveType, InversionType inversion) {
 		Timestamp = timestamp;
 		RootValue = rootValue;
 		HarmonyValue = harmonyValue;
 		MoveType = moveType;
+		Inversion = inversion;
 	}
 }
 
 public enum BasicMoveType {
-	DownBack = 1,
+	DownLeft = 1,
 	Down = 2,
-	DownForward = 3,
+	DownRight = 3,
 	Left = 4,
 	Neutral = 5,
 	Right = 6,
-	UpBack = 7,
+	UpLeft = 7,
 	Up = 8,
-	UpForward = 9,
+	UpRight = 9,
 	LightAttack = 10,
 	MediumAttack = 11,
 	HeavyAttack = 12
+}
+
+public enum InversionType {
+	Standard = 0,
+	First = 1,
+	Second = 2
 }
