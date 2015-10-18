@@ -8,7 +8,7 @@ public class InputParser : MonoBehaviour {
 	public TimeSpan ChordToleranceTime; // max tolerable time to complete a chord
 	public int MinAttack = 60; // this is the dividing line b/w movement and attack
 	public List<int> NoteCache;
-	public DateTime ChordStart;
+	public DateTime? ChordStart;
 	private int _LeftNote;
 	private int _DownNote;
 	private int _UpNote;
@@ -67,7 +67,7 @@ public class InputParser : MonoBehaviour {
 				moveType = BasicMoveType.LightAttack;
 			}
 			BasicMove basicMove = new BasicMove(
-				ChordStart,
+				DateTime.Now,//ChordStart,
 				note,
 				1.0,
 				moveType,
