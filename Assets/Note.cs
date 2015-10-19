@@ -12,6 +12,6 @@ public class Note {
 	/// <summary>
 	/// Frame in which the note was hit (since start of round).
 	/// </summary>
-	public DateTime TimeStamp;
+	public int FrameTimestamp;
 
 }
