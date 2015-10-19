@@ -25,7 +25,4 @@ MonoBehaviour:
     objectVariables: []
     materialVariables: []
     textureVariables: []
-  events:
-  - Light Attack
-  - Medium Attack
-  - Heavy Attack
+  events: []
