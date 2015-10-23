@@ -14,12 +14,15 @@ public class KeyboardStateParser : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         attackKeysDown = new List<Note>();
+        lastFrameNotes = new List<Note>();
         currentAttack = null;
         fighterFSM = this.GetComponentInParent<PlayMakerFSM>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private List<Note> lastFrameNotes;
+
+    // Update is called once per frame
+    void Update() {
         attackKeysDown.Clear();
         // get state of keyboard
         for (int i = 0; i < 127; i++)
@@ -29,36 +32,57 @@ public class KeyboardStateParser : MonoBehaviour {
             {
                 attackKeysDown.Add(new Note
                 {
-                    Value = i,
-                    FrameTimestamp = Time.frameCount
+                    Value = i
                 });
             }
         }
         // if new attack, trigger matching event in fighterFSM
-        if (attackKeysDown.Count > 0 && (currentAttack == null || !ListEquals<Note>(currentAttack, attackKeysDown)))
+        /*bool attackIsNew = true;
+        if (currentAttack != null && currentAttack.Count > 0 && attackKeysDown.Count > 0) {
+            attackIsNew = !NoteListEquals(currentAttack, attackKeysDown);
+        }*/
+        if (attackKeysDown.Count > 0)
         {
-            // read attacks
-            switch (attackKeysDown.Count)
+            if (!NoteListEquals(attackKeysDown, lastFrameNotes))
             {
-                case 1:
-                    fighterFSM.SendEvent("Light Attack");
-                    break;
-                case 2:
-                    fighterFSM.SendEvent("Medium Attack");
-                    break;
-                case 3:
-                    fighterFSM.SendEvent("Heavy Attack");
-                    break;
-                default:
-                    break;
+                // read attacks
+                switch (attackKeysDown.Count)
+                {
+                    case 1:
+                        fighterFSM.SendEvent("LightAttack");
+                        break;
+                    case 2:
+                        fighterFSM.SendEvent("MediumAttack");
+                        break;
+                    case 3:
+                        fighterFSM.SendEvent("HeavyAttack");
+                        break;
+                    default:
+                        break;
+                }
+                currentAttack = attackKeysDown;
             }
-            currentAttack = attackKeysDown;
         }
+        lastFrameNotes = attackKeysDown.ToList();
 	}
 
     public void FinishCurrentAttack()
     {
         currentAttack = null;
+    }
+
+    private bool NoteListEquals(List<Note> list1, List<Note> list2)
+    {
+        List<int> list1Values = list1.Select(note => note.Value).ToList();
+        List<int> list2Values = list2.Select(note => note.Value).ToList();
+        foreach (int note in list1Values)
+        {
+            if (!list2Values.Contains(note))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static bool ListEquals<T>(IEnumerable<T> list1, IEnumerable<T> list2)
