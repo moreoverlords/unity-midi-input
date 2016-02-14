@@ -17,6 +17,10 @@ public class FakeMidiInput : MonoBehaviour {
     {
         switch (i)
         {
+            case 0:
+                return Input.GetKey(KeyCode.Z) ? 1f : 0f; // move left
+            case 1:
+                return Input.GetKey(KeyCode.X) ? 1f : 0f; // move right
             case 60:
                 return Input.GetKey(KeyCode.A) ? 1f : 0f;
             case 61:
