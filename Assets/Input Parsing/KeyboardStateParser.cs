@@ -39,7 +39,7 @@ public class KeyboardStateParser : MonoBehaviour {
         // get state of keyboard
         for (int i = 0; i < 127; i++)
         {
-            float key = FakeMidiInput.GetKey(i);
+            float key = MidiInput.GetKey(i);
             if (key > 0)
             {
                 if (i >= lowRangeStart)
@@ -65,7 +65,7 @@ public class KeyboardStateParser : MonoBehaviour {
             if (!anim.GetBool("MovingLeft"))
             {
                 anim.SetBool("MovingLeft", true);
-                Debug.Log("Moving left");
+                //Debug.Log("Moving left");
             }
         }
         else
@@ -73,7 +73,7 @@ public class KeyboardStateParser : MonoBehaviour {
             if (anim.GetBool("MovingLeft"))
             {
                 anim.SetBool("MovingLeft", false);
-                Debug.Log("Stopped moving left");
+                //Debug.Log("Stopped moving left");
             }
         }
         if (FakeMidiInput.GetKey(1) > 0)
@@ -81,7 +81,7 @@ public class KeyboardStateParser : MonoBehaviour {
             if (!anim.GetBool("MovingRight"))
             {
                 anim.SetBool("MovingRight", true);
-                Debug.Log("Moving right");
+                //Debug.Log("Moving right");
             }
         }
         else
@@ -89,7 +89,7 @@ public class KeyboardStateParser : MonoBehaviour {
             if (anim.GetBool("MovingRight"))
             {
                 anim.SetBool("MovingRight", false);
-                Debug.Log("Stopped moving right");
+                //Debug.Log("Stopped moving right");
             }
         }
         if (attackKeysDown.Count > 0 && !NoteListEquals(attackKeysDown, lastFrameNotes))
